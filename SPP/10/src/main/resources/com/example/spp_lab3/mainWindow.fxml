@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox alignment="CENTER" spacing="20.0" prefHeight="700.0" prefWidth="910.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.spp_lab3.Controller">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <children>
+        <HBox prefHeight="693.0" prefWidth="867.0">
+            <TableView fx:id="storagesTable" onMouseClicked="#handleRowSelect" prefHeight="656.0" prefWidth="598.0">
+                <columns>
+                    <TableColumn fx:id="productColumn" minWidth="0.0" prefWidth="180.8000259399414" text="Product" />
+                    <TableColumn fx:id="warehouseColumn" prefWidth="168.79998779296875" text="Warehouse" />
+                    <TableColumn fx:id="amountColumn" prefWidth="169.60000610351562" text="Amount" />
+                </columns>
+            </TableView>
+        </HBox>
+        <HBox>
+            <ComboBox fx:id="filterCombo" onAction="#showTableButtonClicked" promptText="Warehouse filter" prefHeight="26.0" prefWidth="289.0" />
+        </HBox>
+        <HBox>
+            <VBox>
+                <HBox>
+                    <Label fx:id="idLabel" text="Id:  " GridPane.halignment="RIGHT" />
+                    <Label fx:id="idRowLabel" GridPane.columnIndex="1" GridPane.halignment="RIGHT" />
+                </HBox>
+                <HBox>
+                    <Label fx:id="productLabel" text="Product:  " GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                    <Label fx:id="productRowLabel" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                </HBox>
+                <HBox>
+                    <Label fx:id="warehouseLabel" text="Warehouse:  " GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                    <Label fx:id="warehouseRowLabel" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                </HBox>
+                <HBox>
+                    <Label fx:id="amountLabel" text="Amount:  " GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                    <Label fx:id="amountRowLabel" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                </HBox>
+            </VBox>
+        </HBox>
+        <HBox>
+            <Button fx:id="addButton" onAction="#newButtonClicked" mnemonicParsing="false" prefHeight="26.0" prefWidth="135.0" text="New" />
+            <Button fx:id="editButton" onAction="#editButtonClicked" mnemonicParsing="false" prefHeight="26.0" prefWidth="135.0" text="Edit" />
+            <Button fx:id="deleteButton" onAction="#deleteButtonClicked" mnemonicParsing="false" prefHeight="26.0" prefWidth="135.0" text="Delete" />
+            <Button fx:id="refreshButton" onAction="#refreshButtonClicked" mnemonicParsing="false" prefHeight="26.0" prefWidth="135.0" text="Refresh" />
+        </HBox>
+    </children>
+</VBox>

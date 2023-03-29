@@ -14,10 +14,12 @@ import java.util.stream.Collectors;
 @Service
 public class PatientService {
 
+    public PatientService(){}
+
     @Autowired
     private PatientRepo patientRepo;
 
-    public PatientEntity registration(PatientEntity patient) throws UserAlreadyExistException {
+    public PatientEntity registration(PatientEntity patient) {
         return patientRepo.save(patient);
     }
 
